@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+  "build": "node -e \"const { execSync } = require('child_process'); try { execSync('vite build', { stdio: 'inherit' }); } catch (e) { console.error(require('util').inspect(e, { depth: null })); process.exit(1); }\""
+ },
     "lint": "eslint .",
     "preview": "vite preview"
   },
